@@ -12,26 +12,33 @@ find the sum of the even-valued terms.
 
 #include <stdio.h>
 #include <limits.h>
-// #define MAX 4000000
-#define MAX 100
+#define MAX 4000000
+// #define MAX 10
 
 int main()
 {
     unsigned int n = 0;
-    unsigned int a = 1;
-    unsigned int b = 2;
+    unsigned int a = 0;
+    unsigned int b = 1;
     unsigned int sum = 0;
+    unsigned int evenSum = 0;
 
-    while (n < MAX)
+    while (sum <= MAX)
     {
-        printf("sum: %d", sum = a + b);
+        printf("\n%i: sum= %d\t", n+1, sum = a + b);
+        if (!(sum % 2))
+        {
+            evenSum += sum;
+            printf("\n*even sum: %i\n", evenSum);
+        }
         a = b;
-        printf("a: %d",a);
+        // printf("a: %d\t",a);
         b = sum;
-        printf("b: %d",b);
+        // printf("b: %d\t",b);
         n++;
     }
 
+    printf("\neven sum: %i\n", evenSum);
     return 0;
 }
 
